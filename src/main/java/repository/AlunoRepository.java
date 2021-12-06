@@ -31,7 +31,7 @@ public class AlunoRepository {
 
     }
 
-    public void atualizaNome(Aluno aluno) throws ChaveInexisteException {
+    public void atualizaAluno(Aluno aluno) throws ChaveInexisteException {
         if (dados.containsKey(aluno.getMatricula())) {
             dados.put(aluno.getMatricula(), aluno);
         } else {

@@ -9,15 +9,18 @@ public class TelefoneTeste {
     public void iniciaTeste() {
     }
 
-    @io.cucumber.java.en.And("^chamado o metodo de alterar telefone$")
+    @io.cucumber.java.en.And("^altera telefone teste$")
     public void chamadoOMetodoDeAlteracao() throws ChaveExisteException, ChaveInexisteException {
-        Aluno aluno = new Aluno("Joao", 123232);
-        AlunoRepository.getInstance().insertAluno(aluno);
-        aluno.addFone(new Telefone(12, "434343", 'R', true, "Rato"));
+        Aluno andre = new Aluno("Andre", 999);
+        AlunoRepository.getInstance().insertAluno(andre);
+        andre.addFone(new Telefone(12, "434343", 'R', true, "Rato"));
+
+        AlunoRepository.getInstance().atualizaAluno(andre);
+        assert((AlunoRepository.getInstance().buscaAlunoMatricula(999).getFones().size() == 0));
 
     }
 
-    @io.cucumber.java.en.Then("^o telefone foi alterado$")
+    @io.cucumber.java.en.Then("^telefone alterado com sucesso$")
     public void telefoneSalvoNoRepository() {
     }
 }
