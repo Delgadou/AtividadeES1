@@ -1,0 +1,2 @@
+public class ExcluirAlunoTeste {
+}
